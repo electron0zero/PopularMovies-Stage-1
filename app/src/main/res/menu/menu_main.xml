@@ -7,4 +7,16 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/sort_mostpopular"
+        android:title="@string/action_sort_popular"
+        android:orderInCategory="0"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/sort_mostrated"
+        android:title="@string/action_sort_highestrated"
+        android:orderInCategory="1"
+        app:showAsAction="never"/>
+
 </menu>
