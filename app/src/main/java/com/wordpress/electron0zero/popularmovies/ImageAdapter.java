@@ -1,65 +1,61 @@
 package com.wordpress.electron0zero.popularmovies;
-
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 
 public class ImageAdapter extends BaseAdapter {
-    private Context mContext;
 
-    public ImageAdapter(Context c) {
+    private LayoutInflater inflater;
+    private Context mContext;
+    private String[] img;
+
+    public ImageAdapter(Context c, String[] img) {
         mContext = c;
+        this.img = img;
+        inflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-       return mThumbIds.length;
+       return img.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return img[position];
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     // create a new ImageView for each item referenced by the Adapter
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
-        if (convertView == null) {
-            // if it's not recycled, initialize some attributes
-            imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
-        } else {
-            imageView = (ImageView) convertView;
-        }
+    public View getView(int position, View view, ViewGroup parent) {
+        ImageView posterImage;
 
-        imageView.setImageResource(mThumbIds[position]);
-        return imageView;
+        if (view == null) {
+            // if it's not recycled, initialize some attributes
+            posterImage = new ImageView(mContext);
+            posterImage.setLayoutParams(new GridView.LayoutParams(240, 240));
+            posterImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            posterImage.setAdjustViewBounds(true);
+            posterImage.setPadding(1,1,1,1);
+        }else {
+            posterImage = (ImageView) view;
+        }
+        //Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView)
+        //as per picasso website
+        Picasso.with(mContext).load(img[position]).into(posterImage);
+
+        return posterImage;
     }
 
-    // references to our images
-    // TODO: 22-05-16 use Glide and pass images here 
-    private Integer[] mThumbIds = {
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
-    };
 }
