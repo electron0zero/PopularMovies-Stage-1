@@ -22,4 +22,10 @@ Put Your API KEY in **DownloadTask.java** class file at this line **private fina
     targetSdkVersion 23
 
 ## Screenshots
-see Screenshots folder for that
+<p align="center"><img src="https://raw.githubusercontent.com/electron0zero/PopularMovies-Stage-1/master/Screenshots/1.png" height="300">
+<img src="https://raw.githubusercontent.com/electron0zero/PopularMovies-Stage-1/master/Screenshots/2.png" height="300">
+<img src="https://raw.githubusercontent.com/electron0zero/PopularMovies-Stage-1/master/Screenshots/3.png" height="300">
+<img src="https://raw.githubusercontent.com/electron0zero/PopularMovies-Stage-1/master/Screenshots/4.png" height="300">
+<img src="https://raw.githubusercontent.com/electron0zero/PopularMovies-Stage-1/master/Screenshots/5.png" height="300">
+
+</p>
