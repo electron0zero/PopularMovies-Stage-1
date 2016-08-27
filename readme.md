@@ -1,3 +1,5 @@
+## NOTE : [Popular Movies App, Stage 2](https://github.com/electron0zero/PopularMovies-Stage-2) is imporoved version of this App
+
 # Popular Movies App, Stage 1
 Popular Movies App, Stage 1 App for  my Android Nano Degree Program from  [Udacity](https://www.udacity.com/)
 
